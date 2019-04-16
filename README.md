@@ -6,10 +6,10 @@ L'objectif de ce TP est de créer des conteneurs et d'automatiser la phase de co
 
 ## Les applicatifs
 
-Les applicatifs sont publiés sur un dépôt Github, aux addresses suivantes :
+Les applicatifs sont publiés sur un dépôt Github, dans les sous dossiers de ce dépôts :
 
-- API Frontend :
-- API Backend :
+- API Frontend : api-frontend
+- API Backend : api-backend
 
 L'API Frontend est un script écrit en python et utilisant le framework Flask. Il présente 3 endpoints qui sont :
 
