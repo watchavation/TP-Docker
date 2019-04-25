@@ -35,8 +35,10 @@ def index():
     if api_call.status_code != 200:
         response['error_message'] = 'GET / on backend API {}'.format(
                                     api_call.status_code)
+        response['status'] = '[ERROR]'
     else:
-        response = api_call.json()
+        response['status'] = '[SUCESS]'
+        response['return'] = api_call.json()
     return jsonify(response)
 
 
