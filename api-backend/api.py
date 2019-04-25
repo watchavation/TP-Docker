@@ -14,7 +14,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """
-        Fait un call à l'API backend et renvoit le resultat au format JSON
+      Renvoit un phrase dans un dictionnaire au format JSON
     """
     response = {}
     response['body'] = "Je suis une réponse du backend"
