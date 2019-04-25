@@ -60,11 +60,9 @@ Vous devrez mettre à disposition deux `Dockerfile` (un par applicatif) ainsi qu
 ├── api-backend
 │   ├── Dockerfile
 │   └── api.py
-│   └── Readme.md
 ├── api-frontend
 │   ├── Dockerfile
 │   └── api.py
-│   └── Readme.md
 └── docker-compose.yaml
 ```
 
