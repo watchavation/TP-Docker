@@ -44,6 +44,8 @@ Sur l'API frontend :
 }```. L'API frontend fait une requête HTTP sur l'API backend qui retourne la réponse. Assurez vous que les deux containers puissent communiquer sur le même réseau bridge.
   - http://127.0.0.1:8000/traceback : Ne devrait retourner aucun résultat mais l'application devrait s'arrêter. Le but étant que le container exécutant l'application se relance automatiquement dans ce cas là
   
+Le conteneur Frontend doit disposer de deux variables d'environnement contenant le nom d'hôte à utiliser pour communiquer avec l'autre conteneur, soit les variables `API_BACKEND_URL` et `API_BACKEND_PORT`. Ces variables d'environement sont utilisées par l'applicatif et doivent absolument être renseignées.
+  
   Sur l'API backnd :
   - http://127.0.0.1:8001/ : Cette requête devrait retourner le résultat `{"body": "Je suis une r\u00e9ponse du backend"}`.
   - http://127.0.0.1:8001/traceback : Ne devrait retourner aucun résultat mais l'application devrait s'arrêter. Le but étant que le container exécutant l'application se relance automatiquement dans ce cas là.
