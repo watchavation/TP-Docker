@@ -24,7 +24,29 @@ L'API Frontend est un script écrit en python et utilisant le framework Flask. E
 
  - /traceback (GET) : Cette uri permet de générer une erreur mettant fin au processus en cours d'éxécution dans le container. Cela permet de vérifier, lors de la correction, que l'ID du processus est bien le 1 et que l'applicatif se recharge  automatiquement en cas d'arrêt inopiné.
 
-Chaque applicatif propose un fichier README.md indiquant les pré-requis de fonctionnement du programme (langage utilisé, version de langage et bibliothèques nécessaires).
+Chaque applicatif est codé en Python et nécessite la version 2.7 du langage. Ils utilisent les bibliothèques supplémentaires suivantes :
+
+  - python-requests
+  - python-flask
+
+Chacunes des API peuvent être lancées via la commande `python api.py`. Voici un schéma du chemin d'une requête HTTP du navigateur vers les APIs.
+
+Requête HTTP <--> API FRONTEND <--> API BACKEND
+
+Pour vérifier le fonctionnement des applicatifs, voici les requêtes HTTP que vous pourrez effectuer et le résultat attendu :
+
+Sur l'API frontend :
+  - http://127.0.0.1:8000/ : Cette requête devrait retourner le résultat ``` {
+  "return": {
+    "body": "Je suis une r\u00e9ponse du backend"
+  }, 
+  "status": "[SUCESS]"
+}```. L'API frontend fait une requête HTTP sur l'API backend qui retourne la réponse. Assurez vous que les deux containers puissent communiquer sur le même réseau bridge.
+  - http://127.0.0.1:8000/traceback : Ne devrait retourner aucun résultat mais l'application devrait s'arrêter. Le but étant que le container exécutant l'application se relance automatiquement dans ce cas là
+  
+  Sur l'API backnd :
+  - http://127.0.0.1:8001/ : Cette requête devrait retourner le résultat `{"body": "Je suis une r\u00e9ponse du backend"}`.
+  - http://127.0.0.1:8001/traceback : Ne devrait retourner aucun résultat mais l'application devrait s'arrêter. Le but étant que le container exécutant l'application se relance automatiquement dans ce cas là.
 
 ## Rendu
 
