@@ -50,6 +50,8 @@ Le conteneur Frontend doit disposer de deux variables d'environnement contenant 
   - http://127.0.0.1:8001/ : Cette requête devrait retourner le résultat `{"body": "Je suis une r\u00e9ponse du backend"}`.
   - http://127.0.0.1:8001/traceback : Ne devrait retourner aucun résultat mais l'application devrait s'arrêter. Le but étant que le container exécutant l'application se relance automatiquement dans ce cas là.
 
+Attention, le conteneur Backend devra être lancé avant le frontend lors d'un `docker-compose up`.
+
 ## Rendu
 
 Vous devrez faire un fork du dépôt Github afin de récupérer les deux applicatifs et de pouvoir envoyer vos modifications sur votre dépôt.
