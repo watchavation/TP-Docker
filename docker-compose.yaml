@@ -1,8 +1,10 @@
-version: "2"
+#version: "2"
+version: "3.3"
 services:
   backend:
     build: ./api-backend
-    restart: always
+    #restart: always
+    restart: on-failure
     ports:
       - "8001:8001"
   frontend:
@@ -10,7 +12,8 @@ services:
     environment:
       API_BACKEND_URL: backend
       API_BACKEND_PORT: 8001
-    restart: always
+    #restart: always
+    restart: on-failure
     depends_on:
       - backend
     ports: 
